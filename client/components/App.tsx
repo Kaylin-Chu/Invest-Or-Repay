@@ -1,15 +1,19 @@
-import { useFruits } from '../hooks/useFruits.ts'
+import { Outlet } from 'react-router'
 
 function App() {
-  const { data } = useFruits()
-
   return (
     <>
       <div className="app">
-        <h1 className="text-3xl font-bold underline">
-          Fullstack Boilerplate - with Fruits!
+        <h1 className="text-3xl text-center font-bold">
+          Invest or Repay?
         </h1>
-        <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul>
+        <h2 className="text-l text-center">
+          To do or not to do, that is the question.
+        </h2>
+        <Outlet />
+        <footer className="text-center text-sm"> 
+          Kaylin 2025
+        </footer>
       </div>
     </>
   )
