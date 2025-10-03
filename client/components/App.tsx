@@ -3,7 +3,7 @@ import { Outlet } from 'react-router'
 function App() {
   return (
     <>
-      <div className="app">
+      <div className="bg-green-100">
         <h1 className="text-3xl text-center font-bold mt-4">
           Invest or Repay?
         </h1>

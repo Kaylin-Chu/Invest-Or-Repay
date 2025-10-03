@@ -5,9 +5,13 @@ export default function Home() {
       <div className='text-center m-6'>
         <h2 className="text-2xl font-bold mt-10">Debt Repayment Details</h2>
         <input
-          id="sourceInput"
           type="number"
           placeholder="$ Amount"
+          className="m-2 border p-2"
+        />
+        <input
+          type="string"
+          placeholder="Frequency"
           className="m-2 border p-2"
         />
         <input
@@ -24,7 +28,7 @@ export default function Home() {
         <input
           list="interestRates"
           type="number"
-          placeholder="Investment Interest Rate (%)"
+          placeholder="Investment Interest (%)"
           className="m-2 border p-2"
         />
           <datalist id="interestRates">
