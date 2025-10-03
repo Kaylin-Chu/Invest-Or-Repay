@@ -8,7 +8,7 @@ export default function calculate() {
   const amount = (document.querySelector('input[placeholder="$ Amount"]') as HTMLInputElement).value;
   const rate = (document.querySelector('input[placeholder="Interest Rate (%)"]') as HTMLInputElement).value;
   const time = (document.querySelector('input[placeholder="Time Period (years)"]') as HTMLInputElement).value;
-  const investmentRate = 7; // predetermined interest rate for investment
+  const investmentRate = (document.querySelector('input[placeholder="Investment Interest Rate (%)"]') as HTMLInputElement).value;
 
   if (!amount || !rate || !time) {
     alert("Please fill in all fields.");

@@ -2,9 +2,10 @@ import calculate from './Calculator.tsx'
 export default function Home() {
   return (
     <>
-      <div className='text-center'>
-        <h2 className="text-2xl font-bold">Debt Repayment Details</h2>
+      <div className='text-center m-6'>
+        <h2 className="text-2xl font-bold mt-10">Debt Repayment Details</h2>
         <input
+          id="sourceInput"
           type="number"
           placeholder="$ Amount"
           className="m-2 border p-2"
@@ -19,17 +20,11 @@ export default function Home() {
           placeholder="Time Period (years)"
           className="m-2 border p-2"
         />
-        <br/>
-        <h2 className="text-2xl font-bold">Investment Estimates</h2>
-        <input
-          type="number"
-          placeholder="$ Amount"
-          className="m-2 border p-2"
-        />
+        <h2 className="text-2xl font-bold mt-10">Investment Rate Estimate</h2>
         <input
           list="interestRates"
           type="number"
-          placeholder="Interest Rate (%)"
+          placeholder="Investment Interest Rate (%)"
           className="m-2 border p-2"
         />
           <datalist id="interestRates">
@@ -37,11 +32,6 @@ export default function Home() {
             <option value="4" label="Bonds (avg 4%)" />
             <option value="1" label="Savings Account (avg 1%)" />
           </datalist>
-        <input
-          type="number"
-          placeholder="Time Period (years)"
-          className="m-2 border p-2"
-        />
         <br/>
         <button
           onClick={() => calculate()}
