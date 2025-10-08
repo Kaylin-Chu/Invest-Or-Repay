@@ -17,6 +17,7 @@ const input = (document.querySelector('input[placeholder="$ Extra Amount"]') as 
   const rate = (document.querySelector('input[placeholder="Interest Rate (%)"]') as HTMLInputElement).value;
   const time = (document.querySelector('input[placeholder="Time Period (years)"]') as HTMLInputElement).value;
   const investmentRate = (document.querySelector('input[placeholder="Investment Interest (%)"]') as HTMLInputElement).value;
+  const frequency = (document.querySelector('input[placeholder="Frequency"]') as HTMLInputElement).value;
 
   if (!amount || !rate || !time) {
     alert("Please fill in ALL fields.");
@@ -29,8 +30,8 @@ const input = (document.querySelector('input[placeholder="$ Extra Amount"]') as 
   const debtRepayment = Number(amount) * Math.pow((1 + (Number(rate) / 100)), Number(time));
   const investmentGrowth = Number(amount) * Math.pow((1 + (Number(investmentRate) / 100)), Number(time));
 
-  let resultMessage = `After ${time} years, your debt will grow to $${debtRepayment.toFixed(2)}.\n`;
-  resultMessage += `If you invest the same amount at an average return of ${investmentRate}%, it will grow to $${investmentGrowth.toFixed(2)}.\n\n`;
+  let resultMessage = `After ${time} years, your extra ${frequency.toLowerCase()} payment would save $${(debtRepayment - Number(amount)).toFixed(2)} in compound interest .\n`;
+  resultMessage += `If you invested the same amount at an average return of ${investmentRate}%, it will grow by $${(investmentGrowth - Number(amount)).toFixed(2)}.\n\n`;
 
   if (investmentGrowth > debtRepayment) {
     resultMessage += "It's better to invest!";
