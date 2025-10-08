@@ -5,6 +5,14 @@
 // // Use React state to manage input values and the result
 
 export default function calculate() {
+
+const input = (document.querySelector('input[placeholder="$ Extra Amount"]') as HTMLInputElement)
+  if( input !== null){ input.addEventListener('blur', () => {
+  if (input.value && !input.value.startsWith('$')) {
+    input.value += '$';
+  }
+})};
+
   const amount = (document.querySelector('input[placeholder="$ Extra Amount"]') as HTMLInputElement).value;
   const rate = (document.querySelector('input[placeholder="Interest Rate (%)"]') as HTMLInputElement).value;
   const time = (document.querySelector('input[placeholder="Time Period (years)"]') as HTMLInputElement).value;
