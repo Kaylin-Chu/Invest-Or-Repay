@@ -1,17 +1,27 @@
 import calculate from './Calculator.tsx'
+import Cleave from 'cleave.js'
+import { useEffect } from 'react'
+
 export default function Home() {
+  useEffect(() => {
+    new Cleave('#amountInput', {
+      numeral: true,
+      numeralThousandsGroupStyle: 'thousand',
+    })
+  }, [])
+
   return (
     <>
       <div className="m-6 text-center">
         <h2 className="mt-10 text-2xl font-bold">Debt Repayment Details</h2>
         <input
-          id='amountInput'
-          type="number"
+          id="amountInput"
+          type="text" // Changed to text for Cleave to add comma (not a number)
           placeholder="$ Extra Amount"
           className="m-2 border p-2"
         />
         <input
-          id='frequencyInput'
+          id="frequencyInput"
           list="Frequencies"
           type="string"
           placeholder="Frequency"
@@ -26,20 +36,20 @@ export default function Home() {
           <option value="Yearly" label="Yearly" />
         </datalist>
         <input
-          id='interestInput'
+          id="interestInput"
           type="number"
           placeholder="Interest Rate (%)"
           className="m-2 border p-2"
         />
         <input
-          id='timeInput'
+          id="timeInput"
           type="number"
           placeholder="Time Period (years)"
           className="m-2 border p-2"
         />
         <h2 className="mt-10 text-2xl font-bold">Investment Rate Estimate</h2>
         <input
-          id='investmentInput'
+          id="investmentInput"
           list="interestRates"
           type="number"
           placeholder="Investment Interest (%)"
@@ -60,5 +70,4 @@ export default function Home() {
       </div>
     </>
   )
-  
 }

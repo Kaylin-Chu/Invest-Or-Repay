@@ -46,6 +46,7 @@
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.5.1",
+    "@types/cleave.js": "^1.4.12",
     "@types/express": "^4.17.14",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
