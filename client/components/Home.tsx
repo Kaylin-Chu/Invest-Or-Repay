@@ -7,6 +7,7 @@ export default function Home() {
     new Cleave('#amountInput', {
       numeral: true,
       numeralThousandsGroupStyle: 'thousand',
+      prefix: ' $',
     })
   }, [])
 
@@ -60,6 +61,9 @@ export default function Home() {
           <option value="4" label="Bonds (avg 4%)" />
           <option value="1" label="Savings Account (avg 1%)" />
         </datalist>
+        {/* <i class="stocks"></i>
+        <i class="bonds"></i>
+        <i class="savings"></i> */}
         <br />
         <button
           onClick={() => calculate()}
